@@ -208,15 +208,15 @@
 
 旋转向量到四元数：
 
-![1661516297940](C:\Users\17799\AppData\Roaming\Typora\typora-user-images\1661516297940.png)
+![1661516297940](https://github.com/LinkWithMe/SNN-learnabc/blob/main/Work1/image/21)
 
 四元数到旋转向量：
 
-![1661516394060](C:\Users\17799\AppData\Roaming\Typora\typora-user-images\1661516394060.png)
+![1661516394060](https://github.com/LinkWithMe/SNN-learnabc/blob/main/Work1/image/22)
 
 四元数与旋转矩阵的关系：
 
-![1661516463049](C:\Users\17799\AppData\Roaming\Typora\typora-user-images\1661516463049.png)
+![1661516463049](https://github.com/LinkWithMe/SNN-learnabc/blob/main/Work1/image/23)
 
 可以在q2的左侧或者右侧乘以矩阵q1
 
@@ -246,19 +246,19 @@
 
 在此情况下，相机模型就是：现实世界的空间P经过小孔o投影之后，落在物理成像平面O'-x'-y'上，成像点为P'，图示如下：
 
-![1661520515582](C:\Users\17799\AppData\Roaming\Typora\typora-user-images\1661520515582.png)
+![1661520515582](https://github.com/LinkWithMe/SNN-learnabc/blob/main/Work1/image/24)
 
 在这个成像过程中，可以有以下三角形：
 
-![1661520763796](C:\Users\17799\AppData\Roaming\Typora\typora-user-images\1661520763796.png)
+![1661520763796](https://github.com/LinkWithMe/SNN-learnabc/blob/main/Work1/image/25)
 
 根据相似三角形原理，可以得到公式：
 
-![1661520814971](C:\Users\17799\AppData\Roaming\Typora\typora-user-images\1661520814971.png)
+![1661520814971](https://github.com/LinkWithMe/SNN-learnabc/blob/main/Work1/image/26)
 
 公式描述了P(单位：米)和它的成像P'(单位：米)之间的空间关系，其中f表示焦距，单位同样为米。负号表示，成像与实际物体刚好相反，如下图所示：
 
-![1661520839867](C:\Users\17799\AppData\Roaming\Typora\typora-user-images\1661520839867.png)
+![1661520839867](https://github.com/LinkWithMe/SNN-learnabc/blob/main/Work1/image/27)
 
 ##### 1.1.2 相机坐标系-像素坐标系
 
@@ -268,23 +268,23 @@
 
 像素坐标系与成像平面之间，相差了一个**缩放和一个原点的平移**。图示如下：
 
-![1661526607739](C:\Users\17799\AppData\Roaming\Typora\typora-user-images\1661526607739.png)
+![1661526607739](https://github.com/LinkWithMe/SNN-learnabc/blob/main/Work1/image/28)
 
 成像平面到像素坐标的坐标转换公式如下：
 
-![1661526677436](C:\Users\17799\AppData\Roaming\Typora\typora-user-images\1661526677436.png)
+![1661526677436](https://github.com/LinkWithMe/SNN-learnabc/blob/main/Work1/image/29)
 
 其中，α和β为缩放比例，cx和cy为平移距离。
 
 详细点从矩阵角度来看，将u，v写成齐次坐标的形式，即可写成如下形式:
 
-![1661527029743](C:\Users\17799\AppData\Roaming\Typora\typora-user-images\1661527029743.png)
+![1661527029743](https://github.com/LinkWithMe/SNN-learnabc/blob/main/Work1/image/30)
 
 其中，矩阵K为内参数，PC～为相机坐标系位置。
 
 将等式两边同时乘以Z，写成传统形式如下：
 
-![1661527214962](C:\Users\17799\AppData\Roaming\Typora\typora-user-images\1661527214962.png)
+![1661527214962](https://github.com/LinkWithMe/SNN-learnabc/blob/main/Work1/image/31)
 
 该式子描述了相机坐标系中点(单位：米)和像素坐标系中(单位：像素)的关系。且fx，fy，cx和cy的单位都为像素。
 
@@ -292,11 +292,11 @@
 
 另外，当取Z为1时，实际规定为归一化平面，带入Z=1可得：
 
-![1661527940162](C:\Users\17799\AppData\Roaming\Typora\typora-user-images\1661527940162.png)
+![1661527940162](https://github.com/LinkWithMe/SNN-learnabc/blob/main/Work1/image/32)
 
 K为内参，一般在相机生产时就已经确定。除去内参外，相机坐标系和世界坐标系还相差一个变化：
 
-![1661591318890](C:\Users\17799\AppData\Roaming\Typora\typora-user-images\1661591318890.png)
+![1661591318890](https://github.com/LinkWithMe/SNN-learnabc/blob/main/Work1/image/33)
 
 其中R，t为外参，即在相机生产之后，随着相机运动而发生变化。右侧式子隐含了一次非齐次到齐次的变换
 
@@ -312,17 +312,17 @@ K为内参，一般在相机生产时就已经确定。除去内参外，相机�
 
 可以用归一化坐标来对畸变进行描述，径向和切向如下：
 
-![1661592399061](C:\Users\17799\AppData\Roaming\Typora\typora-user-images\1661592399061.png)
+![1661592399061](https://github.com/LinkWithMe/SNN-learnabc/blob/main/Work1/image/34)
 
 其中r为根号下x的平方+y的平方
 
 将切向畸变与径向畸变放在一起，就可以建立一个描述畸变的模型：
 
-![1661592465778](C:\Users\17799\AppData\Roaming\Typora\typora-user-images\1661592465778.png)
+![1661592465778](https://github.com/LinkWithMe/SNN-learnabc/blob/main/Work1/image/35)
 
 小孔成像的一般流程：
 
-![1661592552109](C:\Users\17799\AppData\Roaming\Typora\typora-user-images\1661592552109.png)
+![1661592552109](https://github.com/LinkWithMe/SNN-learnabc/blob/main/Work1/image/36)
 
 其中，畸变的坐标处理放在3-4步之间
 
@@ -330,11 +330,11 @@ K为内参，一般在相机生产时就已经确定。除去内参外，相机�
 
 双目相机模型中，左右相机中心距离称为基线，左右两个相机水平放置，抽象成几何模型如下：
 
-![1661593626773](C:\Users\17799\AppData\Roaming\Typora\typora-user-images\1661593626773.png)
+![1661593626773](https://github.com/LinkWithMe/SNN-learnabc/blob/main/Work1/image/37)
 
 根据相似三角形，可以得到左右像素的几何关系：
 
-![1661593653955](C:\Users\17799\AppData\Roaming\Typora\typora-user-images\1661593653955.png)
+![1661593653955](https://github.com/LinkWithMe/SNN-learnabc/blob/main/Work1/image/38)
 
 根据整理后的公式，我们就可以根据左右不同相机像素的坐标，来计算出P点距离相机的距离z(f为焦距，b为基线，d为视差[描述同一个点在左右目上成像的距离])。
 
@@ -346,7 +346,7 @@ d最小为1个像素，且双目能测量的距离z存在最大值：fb
 
 RGB-D相机通过物理手段来测量深度，主要有ToF和结构光两种测量深度的方式：
 
-![1661611658681](C:\Users\17799\AppData\Roaming\Typora\typora-user-images\1661611658681.png)
+![1661611658681](https://github.com/LinkWithMe/SNN-learnabc/blob/main/Work1/image/39)
 
 这种方式需要打光以及采集返回光，当一些物体吸收光线，收集不到返回的光线时，这种方法就会出现问题。
 
@@ -354,7 +354,7 @@ RGB-D相机通过物理手段来测量深度，主要有ToF和结构光两种测
 
 相机成像后，便生成了图像。图像在计算机中以二维数组的形式进行存储，而一个像素点的具体信息，可以根据灰度图还是彩色图的不同，来规定不同的格式：
 
-![1661613029081](C:\Users\17799\AppData\Roaming\Typora\typora-user-images\1661613029081.png)
+![1661613029081](https://github.com/LinkWithMe/SNN-learnabc/blob/main/Work1/image/40)
 
 ## 三、ch7-视觉里程计
 
