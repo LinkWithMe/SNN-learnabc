@@ -651,15 +651,15 @@ P3P通过三角形相似原理，将问题最终转化为3D-3D的位姿估计问
 
 ![1661872700806](https://github.com/LinkWithMe/SNN-learnabc/blob/main/Work1/image/80)
 
-![1661872831383](C:\Users\17799\AppData\Roaming\Typora\typora-user-images\1661872831383.png)
+![1661872831383](https://github.com/LinkWithMe/SNN-learnabc/blob/main/Work1/image/81)
 
 重投影误差的来源和计算思路：
 
-![1661872870947](C:\Users\17799\AppData\Roaming\Typora\typora-user-images\1661872870947.png)
+![1661872870947](https://github.com/LinkWithMe/SNN-learnabc/blob/main/Work1/image/82)
 
 除去优化位姿(R和t)，还希望优化特征点的空间位置，则需要讨论e关于空间点P的导数：
 
-![1661873235177](C:\Users\17799\AppData\Roaming\Typora\typora-user-images\1661873235177.png)
+![1661873235177](https://github.com/LinkWithMe/SNN-learnabc/blob/main/Work1/image/83)
 
 #### 4.5 ICP
 
@@ -667,21 +667,21 @@ ICP是根据前后两帧图像中匹配好的**特征点**在**相机坐标系**
 
 问题描述以及问题求解：
 
-![1661873455396](C:\Users\17799\AppData\Roaming\Typora\typora-user-images\1661873455396.png)
+![1661873455396](https://github.com/LinkWithMe/SNN-learnabc/blob/main/Work1/image/84)
 
 ##### 4.5.1 SVD求解方法
 
 定义误差与目标函数：
 
-![1661873807442](C:\Users\17799\AppData\Roaming\Typora\typora-user-images\1661873807442.png)
+![1661873807442](https://github.com/LinkWithMe/SNN-learnabc/blob/main/Work1/image/85)
 
 优化，先对t进行求偏导，消去t后带入原式继续化简：
 
-![1661874117856](C:\Users\17799\AppData\Roaming\Typora\typora-user-images\1661874117856.png)
+![1661874117856](https://github.com/LinkWithMe/SNN-learnabc/blob/main/Work1/image/86)
 
 通过公式对R进行进一步的简化：
 
-![1661874527667](C:\Users\17799\AppData\Roaming\Typora\typora-user-images\1661874527667.png)
+![1661874527667](https://github.com/LinkWithMe/SNN-learnabc/blob/main/Work1/image/87)
 
 得出最后的R矩阵，应该为uv的转置
 
@@ -689,7 +689,7 @@ ICP是根据前后两帧图像中匹配好的**特征点**在**相机坐标系**
 
 算法和求解ICP的特点如下：
 
-![1661874761481](C:\Users\17799\AppData\Roaming\Typora\typora-user-images\1661874761481.png)
+![1661874761481](https://github.com/LinkWithMe/SNN-learnabc/blob/main/Work1/image/88)
 
 
 
@@ -699,7 +699,7 @@ ICP是根据前后两帧图像中匹配好的**特征点**在**相机坐标系**
 
 目前特征点法存在的问题：
 
-![1661913494444](C:\Users\17799\AppData\Roaming\Typora\typora-user-images\1661913494444.png)
+![1661913494444](https://github.com/LinkWithMe/SNN-learnabc/blob/main/Work1/image/89)
 
 解决方案：
 
@@ -717,7 +717,7 @@ ICP是根据前后两帧图像中匹配好的**特征点**在**相机坐标系**
 
 定义：
 
-![1661921313428](C:\Users\17799\AppData\Roaming\Typora\typora-user-images\1661921313428.png)
+![1661921313428](https://github.com/LinkWithMe/SNN-learnabc/blob/main/Work1/image/90)
 
 把图像看成了关于位置与时间的函数，它的值域就是图像中像素的灰度。
 
@@ -725,21 +725,21 @@ ICP是根据前后两帧图像中匹配好的**特征点**在**相机坐标系**
 
 由该假设可以以下关系式：
 
-![1661921771116](C:\Users\17799\AppData\Roaming\Typora\typora-user-images\1661921771116.png)
+![1661921771116](https://github.com/LinkWithMe/SNN-learnabc/blob/main/Work1/image/91)
 
 注意灰度不变假设是一个很强的假设,实际中很可能不成立。事实上,由于物体的材质不同,像素会出现高光和阴影部分;有时，相机会自动调整曝光参数，使得图像整体变亮或变暗。这时灰度不变假设都是不成立的，因此光流的结果也不一定可靠。然而，从另一方面来说，所有算法都是在一定假设下工作的。如果我们什么假设都不做，就没法设计实用的算法。所以，让我们暂且认为该假设成立,看看如何计算像素的运动。
 
-![1661921935302](C:\Users\17799\AppData\Roaming\Typora\typora-user-images\1661921935302.png)
+![1661921935302](https://github.com/LinkWithMe/SNN-learnabc/blob/main/Work1/image/92)
 
 我们想计算的是像素的运动u,v，但是该式是带有两个变量的一次方程，仅凭它无法计算出u,v。因此，必须引入额外的约束来计算u,u。在LK光流中，我们假设**某一个窗口内的像素具有相同的运动**。
 
 因此可以得到方程：
 
-![1661922200644](C:\Users\17799\AppData\Roaming\Typora\typora-user-images\1661922200644.png)
+![1661922200644](https://github.com/LinkWithMe/SNN-learnabc/blob/main/Work1/image/93)
 
 这是一个关于u,v的超定线性方程，传统解法是求最小二乘解。最小二乘经常被用到:
 
-![1661922257116](C:\Users\17799\AppData\Roaming\Typora\typora-user-images\1661922257116.png)
+![1661922257116](https://github.com/LinkWithMe/SNN-learnabc/blob/main/Work1/image/94)
 
 这样就得到了像素在图像间的运动速度u, v。当t取离散的时刻而不是连续时间时，我们可以估计某块像素在若干个图像中出现的位置。由于像素梯度仅在局部有效、所以如果一次迭代不够好，我们会多迭代几次这个方程。在SLAM中，LK光流常被用来跟踪角点的运动。
 
@@ -751,19 +751,19 @@ ICP是根据前后两帧图像中匹配好的**特征点**在**相机坐标系**
 
 如下图中：
 
-![1661928388956](C:\Users\17799\AppData\Roaming\Typora\typora-user-images\1661928388956.png)
+![1661928388956](https://github.com/LinkWithMe/SNN-learnabc/blob/main/Work1/image/95)
 
-![1661928404446](C:\Users\17799\AppData\Roaming\Typora\typora-user-images\1661928404446.png)
+![1661928404446](https://github.com/LinkWithMe/SNN-learnabc/blob/main/Work1/image/96)
 
-![1661928417376](C:\Users\17799\AppData\Roaming\Typora\typora-user-images\1661928417376.png)
+![1661928417376](https://github.com/LinkWithMe/SNN-learnabc/blob/main/Work1/image/97)
 
 在直接法中，由于没有特征匹配，我们无从知道哪一个p2与p1对应着同一个点。直接法的思路是根据当前相机的位姿估计值寻找p2的位置。但若相机位姿不够好,p2的外观和p1会有明显差别。于是，为了减小这个差别，我们优化相机的位姿，来寻找与p1更相似的p2。这同样可以通过解一个优化问题完成，但此时最小化的不是重投影误差，而是** **，也就是P的两个像素的亮度误差:
 
-![1661928621497](C:\Users\17799\AppData\Roaming\Typora\typora-user-images\1661928621497.png)
+![1661928621497](https://github.com/LinkWithMe/SNN-learnabc/blob/main/Work1/image/98)
 
 注意，这里的优化变量是相机位姿T，而不像光流那样优化各个特征点的运动。为了求解这个优化问题，我们关心误差e是如何随着相机位姿T变化的，需要分析它们的导数关系。设定中间量，并经过泰勒展开和求导，得到雅可比矩阵：
 
-![1661928883266](C:\Users\17799\AppData\Roaming\Typora\typora-user-images\1661928883266.png)
+![1661928883266](https://github.com/LinkWithMe/SNN-learnabc/blob/main/Work1/image/99)
 
 然后使用高斯牛顿法或者列文伯格-马夸尔特方法计算增量。
 
