@@ -58,7 +58,7 @@
 
 通过旋转与平移，将世界坐标系转化为相机坐标系：
 
-![1660819906551](C:\Users\17799\AppData\Roaming\Typora\typora-user-images\1660819906551.png)
+![1660819906551](https://github.com/LinkWithMe/SNN-learnabc/blob/main/Work1/image/1)
 
 平移是一个向量
 
@@ -68,11 +68,11 @@
 
 在新旧坐标系中，必须保持该等式的成立
 
-![1660820243388](C:\Users\17799\AppData\Roaming\Typora\typora-user-images\1660820243388.png)
+![1660820243388](https://github.com/LinkWithMe/SNN-learnabc/blob/main/Work1/image/2)
 
 在等式两侧的左侧同时乘以(e1,e2,e3)的转置，可得：
 
-![1660820288107](C:\Users\17799\AppData\Roaming\Typora\typora-user-images\1660820288107.png)
+![1660820288107](https://github.com/LinkWithMe/SNN-learnabc/blob/main/Work1/image/3)
 
 可以简单看成**a=Ra'**，其中R称之为**旋转矩阵**
 
@@ -80,15 +80,15 @@
 
 取行列式为1的正交矩阵为旋转矩阵，数学表达如下：
 
-![1660820855745](C:\Users\17799\AppData\Roaming\Typora\typora-user-images\1660820855745.png)
+![1660820855745](https://github.com/LinkWithMe/SNN-learnabc/blob/main/Work1/image/4)
 
 通过旋转矩阵来描述两个坐标的变换关系：
 
-![1660820942474](C:\Users\17799\AppData\Roaming\Typora\typora-user-images\1660820942474.png)
+![1660820942474](https://github.com/LinkWithMe/SNN-learnabc/blob/main/Work1/image/5)
 
 当加上平移t后，两个坐标系的刚体运动可以由R，t完全描述：
 
-![1660820972021](C:\Users\17799\AppData\Roaming\Typora\typora-user-images\1660820972021.png)
+![1660820972021](https://github.com/LinkWithMe/SNN-learnabc/blob/main/Work1/image/6)
 
 #### 1.2 齐次坐标和变换矩阵
 
@@ -96,23 +96,23 @@
 
 例如，从a->b->c的变换过程：
 
-![1660821360195](C:\Users\17799\AppData\Roaming\Typora\typora-user-images\1660821360195.png)
+![1660821360195](https://github.com/LinkWithMe/SNN-learnabc/blob/main/Work1/image/7)
 
 不难发现，若经历多次旋转变化，那么式子叠加起来会越来越复杂，因此通过加1，改写为如下形式：
 
-![1660821429851](C:\Users\17799\AppData\Roaming\Typora\typora-user-images\1660821429851.png)
+![1660821429851](https://github.com/LinkWithMe/SNN-learnabc/blob/main/Work1/image/8)
 
 相关概念：
 
 这种用**四个数**表达**三维向量**的做法称为齐次坐标，引入齐次坐标后，旋转和平移可以放在同一个矩阵中，称为**变换矩阵**，数学上的表达如下：
 
-![1660821549322](C:\Users\17799\AppData\Roaming\Typora\typora-user-images\1660821549322.png)
+![1660821549322](https://github.com/LinkWithMe/SNN-learnabc/blob/main/Work1/image/9)
 
 为4x4矩阵，且R属于三阶的旋转矩阵
 
 因此，反向的变换就是T的逆：
 
-![1660821638282](C:\Users\17799\AppData\Roaming\Typora\typora-user-images\1660821638282.png)
+![1660821638282](https://github.com/LinkWithMe/SNN-learnabc/blob/main/Work1/image/10)
 
 旋转矩阵与变换矩阵存在的问题：
 
@@ -124,17 +124,17 @@
 
 解决旋转矩阵的冗余问题，提出了旋转向量的概念，旋转向量的三自由度，由R3向量表示，方向为旋转轴，长度为转过的角度，计算公式如下：
 
-![1660832008784](C:\Users\17799\AppData\Roaming\Typora\typora-user-images\1660832008784.png)
+![1660832008784](https://github.com/LinkWithMe/SNN-learnabc/blob/main/Work1/image/11)
 
 旋转向量只有三个量，没有约束
 
 旋转向量转换为旋转矩阵，通过罗德里格斯公式：
 
-![1660832071754](C:\Users\17799\AppData\Roaming\Typora\typora-user-images\1660832071754.png)
+![1660832071754](https://github.com/LinkWithMe/SNN-learnabc/blob/main/Work1/image/12)
 
 旋转矩阵转旋转向量时，通过角度和轴进行计算：
 
-![1660832125501](C:\Users\17799\AppData\Roaming\Typora\typora-user-images\1660832125501.png)
+![1660832125501](https://github.com/LinkWithMe/SNN-learnabc/blob/main/Work1/image/13)
 
 无论是旋转矩阵还是旋转向量，它们都能描述旋转，但是对于我们理解起来是非常不直观的。当看到一个旋转矩阵或者是旋转向量时，难以想象出来这个旋转究竟是什么样。
 
@@ -155,11 +155,11 @@
 
 如下图，需要注意的是，第一次旋转是针对全局的Z轴，之后的两次旋转都是针对自己的轴：
 
-![1660917936144](C:\Users\17799\AppData\Roaming\Typora\typora-user-images\1660917936144.png)
+![1660917936144](https://github.com/LinkWithMe/SNN-learnabc/blob/main/Work1/image/14)
 
 欧拉角存在的问题是**万向锁**，在ZYX顺序中，若第二次旋转得到的为正负90°，则第三次和第一次绕同一个轴，使得系统丢失了一个自由度，存在**奇异性问题**。如图：
 
-![1660918242983](C:\Users\17799\AppData\Roaming\Typora\typora-user-images\1660918242983.png)
+![1660918242983](https://github.com/LinkWithMe/SNN-learnabc/blob/main/Work1/image/15)
 
 经过第二次绕y轴旋转±90°后，X轴变成与地面垂直的轴，这时的X轴与之前的Z轴重合。
 
@@ -182,25 +182,25 @@
 
 数学上的定义如下：
 
-![1660919419695](C:\Users\17799\AppData\Roaming\Typora\typora-user-images\1660919419695.png)
+![1660919419695](https://github.com/LinkWithMe/SNN-learnabc/blob/main/Work1/image/16)
 
 一些基本性质：
 
-![1660919450982](C:\Users\17799\AppData\Roaming\Typora\typora-user-images\1660919450982.png)
+![1660919450982](https://github.com/LinkWithMe/SNN-learnabc/blob/main/Work1/image/17)
 
 四元数的一些运算性质：
 
-![1660919711958](C:\Users\17799\AppData\Roaming\Typora\typora-user-images\1660919711958.png)
+![1660919711958](https://github.com/LinkWithMe/SNN-learnabc/blob/main/Work1/image/18)
 
 其中两种乘法亦有差距，其中点乘为对应位置数值相乘，乘法原理如下：
 
-![1660919837296](C:\Users\17799\AppData\Roaming\Typora\typora-user-images\1660919837296.png)
+![1660919837296](https://github.com/LinkWithMe/SNN-learnabc/blob/main/Work1/image/19)
 
 #### 4.2 四元数表示旋转
 
 用四元数表示旋转的方式如下：
 
-![1661502548282](C:\Users\17799\AppData\Roaming\Typora\typora-user-images\1661502548282.png)
+![1661502548282](https://github.com/LinkWithMe/SNN-learnabc/blob/main/Work1/image/20)
 
 并且，变换之后的V的实部为0，虚部是罗德里格斯公式的结果
 
