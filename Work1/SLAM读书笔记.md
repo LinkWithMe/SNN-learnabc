@@ -512,7 +512,7 @@ BRIEF是一种二进制描述，用汉明距离来进行度量。如BRIEF-128就
 
 对E进行奇异值分解：
 
-![1661777533534](C:\Users\17799\AppData\Roaming\Typora\typora-user-images\1661777533534.png)
+![1661777533534](https://github.com/LinkWithMe/SNN-learnabc/blob/main/Work1/image/61)
 
 ##### 2.3.4 单应矩阵H
 
@@ -520,25 +520,25 @@ BRIEF是一种二进制描述，用汉明距离来进行度量。如BRIEF-128就
 
 涉疫对匹配好的特征点位于某平面上，则这个平面P满足方程：
 
-![1661782981565](C:\Users\17799\AppData\Roaming\Typora\typora-user-images\1661782981565.png)
+![1661782981565](https://github.com/LinkWithMe/SNN-learnabc/blob/main/Work1/image/62)
 
 那么两个图像特征点的关系可以如下表示：
 
-![1661783056718](C:\Users\17799\AppData\Roaming\Typora\typora-user-images\1661783056718.png)
+![1661783056718](https://github.com/LinkWithMe/SNN-learnabc/blob/main/Work1/image/63)
 
 线性方程求H：
 
-![1661783173888](C:\Users\17799\AppData\Roaming\Typora\typora-user-images\1661783173888.png)
+![1661783173888](https://github.com/LinkWithMe/SNN-learnabc/blob/main/Work1/image/64)
 
 其中，去掉第三行是因为线性相关
 
 通过单应矩阵来恢复R，t：
 
-![1661783252749](C:\Users\17799\AppData\Roaming\Typora\typora-user-images\1661783252749.png)
+![1661783252749](https://github.com/LinkWithMe/SNN-learnabc/blob/main/Work1/image/65)
 
 ##### 2.3.5 尺度不确定性
 
-![1661783389873](C:\Users\17799\AppData\Roaming\Typora\typora-user-images\1661783389873.png)
+![1661783389873](https://github.com/LinkWithMe/SNN-learnabc/blob/main/Work1/image/66)
 
 简单来说，我们只能获取图像的轮廓和结构，而无法了解其真实尺寸。
 
@@ -546,27 +546,27 @@ BRIEF是一种二进制描述，用汉明距离来进行度量。如BRIEF-128就
 
  结合先前的部分内容，我们已经学习到了对极几何，结合知识梳理的算法处理流程如下：
 
-![1661786148234](C:\Users\17799\AppData\Roaming\Typora\typora-user-images\1661786148234.png)
+![1661786148234](https://github.com/LinkWithMe/SNN-learnabc/blob/main/Work1/image/67)
 
 使用三角测量的原因：
 
-![1661786313804](C:\Users\17799\AppData\Roaming\Typora\typora-user-images\1661786313804.png)
+![1661786313804](https://github.com/LinkWithMe/SNN-learnabc/blob/main/Work1/image/68)
 
 三角测量是指**通过在两处观察同一个点的夹角，从而确定该点的距离**。
 
 在如下图中：
 
-![1661786416935](C:\Users\17799\AppData\Roaming\Typora\typora-user-images\1661786416935.png)
+![1661786416935](https://github.com/LinkWithMe/SNN-learnabc/blob/main/Work1/image/69)
 
 由于噪声的影响，无法比较准确地定位实际物体的地点，因此通过最小二乘法来求解。
 
 根据R和t来求解深度s1，s2：
 
-![1661786646258](C:\Users\17799\AppData\Roaming\Typora\typora-user-images\1661786646258.png)
+![1661786646258](https://github.com/LinkWithMe/SNN-learnabc/blob/main/Work1/image/70)
 
 三角化中存在的问题，以及详细的解释：
 
-![1661786764592](C:\Users\17799\AppData\Roaming\Typora\typora-user-images\1661786764592.png)
+![1661786764592](https://github.com/LinkWithMe/SNN-learnabc/blob/main/Work1/image/71)
 
 ### 4.PNP
 
@@ -578,7 +578,7 @@ BRIEF是一种二进制描述，用汉明距离来进行度量。如BRIEF-128就
 - 2D：两幅图片的匹配点信息，像素坐标
 - 其他：相机内参
 
-![1661787049702](C:\Users\17799\AppData\Roaming\Typora\typora-user-images\1661787049702.png)
+![1661787049702](https://github.com/LinkWithMe/SNN-learnabc/blob/main/Work1/image/72)
 
 求：
 
@@ -596,11 +596,11 @@ BRIEF是一种二进制描述，用汉明距离来进行度量。如BRIEF-128就
 
 数学语言描述如下：
 
-![1661787343004](C:\Users\17799\AppData\Roaming\Typora\typora-user-images\1661787343004.png)
+![1661787343004](https://github.com/LinkWithMe/SNN-learnabc/blob/main/Work1/image/73)
 
 由此可见，一对匹配点可以得到**两个关于t的线性约束**，因此：
 
-![1661787522005](C:\Users\17799\AppData\Roaming\Typora\typora-user-images\1661787522005.png)
+![1661787522005](https://github.com/LinkWithMe/SNN-learnabc/blob/main/Work1/image/74)
 
 局限性主要是因为，**旋转矩阵有其自身的限制**，而得出的R矩阵可能不满足该限制，因此需要寻找一个最好的R矩阵来进行近似。
 
@@ -612,7 +612,7 @@ BRIEF是一种二进制描述，用汉明距离来进行度量。如BRIEF-128就
 
 在如下图中：
 
-![1661847511450](C:\Users\17799\AppData\Roaming\Typora\typora-user-images\1661847511450.png)
+![1661847511450](https://github.com/LinkWithMe/SNN-learnabc/blob/main/Work1/image/75)
 
 已知：
 
@@ -624,11 +624,11 @@ BRIEF是一种二进制描述，用汉明距离来进行度量。如BRIEF-128就
 
 根据相似三角形原理可得：
 
-![1661847685711](C:\Users\17799\AppData\Roaming\Typora\typora-user-images\1661847685711.png)
+![1661847685711](https://github.com/LinkWithMe/SNN-learnabc/blob/main/Work1/image/76)
 
 最后得到一个关于x和y的二元二次方程，通过吴消元法进行求解：
 
-![1661847844535](C:\Users\17799\AppData\Roaming\Typora\typora-user-images\1661847844535.png)
+![1661847844535](https://github.com/LinkWithMe/SNN-learnabc/blob/main/Work1/image/77)
 
 P3P通过三角形相似原理，将问题最终转化为3D-3D的位姿估计问题，但是存在问题
 
@@ -641,15 +641,15 @@ P3P通过三角形相似原理，将问题最终转化为3D-3D的位姿估计问
 
 目标函数定义分析：
 
-![1661848801547](C:\Users\17799\AppData\Roaming\Typora\typora-user-images\1661848801547.png)
+![1661848801547](https://github.com/LinkWithMe/SNN-learnabc/blob/main/Work1/image/78)
 
 已知的是通过模型计算出的**“预测”投影像素坐标**以及**“实际”投影的像素坐标**：
 
-![1661850790632](C:\Users\17799\AppData\Roaming\Typora\typora-user-images\1661850790632.png)
+![1661850790632](https://github.com/LinkWithMe/SNN-learnabc/blob/main/Work1/image/79)
 
 针对目标函数进行求解：
 
-![1661872700806](C:\Users\17799\AppData\Roaming\Typora\typora-user-images\1661872700806.png)
+![1661872700806](https://github.com/LinkWithMe/SNN-learnabc/blob/main/Work1/image/80)
 
 ![1661872831383](C:\Users\17799\AppData\Roaming\Typora\typora-user-images\1661872831383.png)
 
