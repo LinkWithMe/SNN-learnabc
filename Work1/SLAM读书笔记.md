@@ -380,7 +380,7 @@ RGB-D相机通过物理手段来测量深度，主要有ToF和结构光两种测
 
 在如下所示图中：
 
-![1661615728127](C:\Users\17799\AppData\Roaming\Typora\typora-user-images\1661615728127.png)
+![1661615728127](https://github.com/LinkWithMe/SNN-learnabc/blob/main/Work1/image/41)
 
 一般选择**角点**为特征点，在一些情况下也可以选择边缘为特征点，但一般不选择区块
 
@@ -400,7 +400,7 @@ RGB-D相机通过物理手段来测量深度，主要有ToF和结构光两种测
 
 在提取FAST时，通过比较一个点周围像素连续N个点的灰度值的差异来进行选取：
 
-![1661667225329](C:\Users\17799\AppData\Roaming\Typora\typora-user-images\1661667225329.png)
+![1661667225329](https://github.com/LinkWithMe/SNN-learnabc/blob/main/Work1/image/42)
 
 如图所示，在P点周围选取16个点，若这些连续的N个点的灰度值比P点大或者小一个阈值，就将P看作是关键点。
 
@@ -412,7 +412,7 @@ BRIEF描述子，用来区分不同的特征点。
 
 BRIEF是一种二进制描述，用汉明距离来进行度量。如BRIEF-128就是128bit，包含128对两点之间的比较结果，结果有0与1的区别。根据两点的取的分布的不同，可以有以下pattern：
 
-![1661667862067](C:\Users\17799\AppData\Roaming\Typora\typora-user-images\1661667862067.png)
+![1661667862067](https://github.com/LinkWithMe/SNN-learnabc/blob/main/Work1/image/43)
 
 #### 1.3 特征匹配
 
@@ -424,11 +424,11 @@ BRIEF是一种二进制描述，用汉明距离来进行度量。如BRIEF-128就
 
 根据特征匹配之后的结果不同，得到了特征点之间不同的对应关系：
 
-![1661668772920](C:\Users\17799\AppData\Roaming\Typora\typora-user-images\1661668772920.png)
+![1661668772920](https://github.com/LinkWithMe/SNN-learnabc/blob/main/Work1/image/44)
 
 基本的示意图、几何关系如下：
 
-![1661671109615](C:\Users\17799\AppData\Roaming\Typora\typora-user-images\1661671109615.png)
+![1661671109615](https://github.com/LinkWithMe/SNN-learnabc/blob/main/Work1/image/45)
 
 其中：
 
@@ -441,11 +441,11 @@ BRIEF是一种二进制描述，用汉明距离来进行度量。如BRIEF-128就
 
 关于点P的空间位置坐标，以及p1，p2像素点的位置坐标设置，有如下解释和规定：
 
-![1661687976436](C:\Users\17799\AppData\Roaming\Typora\typora-user-images\1661687976436.png)
+![1661687976436](https://github.com/LinkWithMe/SNN-learnabc/blob/main/Work1/image/46)
 
 对于如上的s1p1，s2p2两个公式，我们进行如下操作：
 
-![1661696182456](C:\Users\17799\AppData\Roaming\Typora\typora-user-images\1661696182456.png)
+![1661696182456](https://github.com/LinkWithMe/SNN-learnabc/blob/main/Work1/image/47)
 
 - 第一行是乘以k的逆
 - 第三行中的x1，x2，实际上是转化成了归一化坐标
@@ -458,33 +458,33 @@ BRIEF是一种二进制描述，用汉明距离来进行度量。如BRIEF-128就
 
 ##### 2.3.1 对极约束
 
-![1661698890318](C:\Users\17799\AppData\Roaming\Typora\typora-user-images\1661698890318.png)
+![1661698890318](https://github.com/LinkWithMe/SNN-learnabc/blob/main/Work1/image/48)
 
 相机位姿的估计问题分为以下两步：
 
-![1661698930353](C:\Users\17799\AppData\Roaming\Typora\typora-user-images\1661698930353.png)
+![1661698930353](https://github.com/LinkWithMe/SNN-learnabc/blob/main/Work1/image/49)
 
 ##### 2.3.2 本质矩阵
 
 本质矩阵的性质如下：
 
-![1661699594849](C:\Users\17799\AppData\Roaming\Typora\typora-user-images\1661699594849.png)
+![1661699594849](https://github.com/LinkWithMe/SNN-learnabc/blob/main/Work1/image/50)
 
 本质矩阵E的求解方法：
 
-![1661699612840](C:\Users\17799\AppData\Roaming\Typora\typora-user-images\1661699612840.png)
+![1661699612840](https://github.com/LinkWithMe/SNN-learnabc/blob/main/Work1/image/51)
 
 八点法求E的过程中，将E看作通常意义下的3x3矩阵，去掉尺度因子后剩余八个自由度：
 
-![1661774503924](C:\Users\17799\AppData\Roaming\Typora\typora-user-images\1661774503924.png)
+![1661774503924](https://github.com/LinkWithMe/SNN-learnabc/blob/main/Work1/image/52)
 
 对于如上的矩阵方程组，根据矩阵的性质，可以对解的结果进行初步判断：
 
-![1661775092656](C:\Users\17799\AppData\Roaming\Typora\typora-user-images\1661775092656.png)
+![1661775092656](https://github.com/LinkWithMe/SNN-learnabc/blob/main/Work1/image/53)
 
 如果给定的匹配点多于8，且方程彼此间存在线性相关，则该方程就构成了一个**超定方程**，即不一定存在e使得上式成立。此时可以选择最小二乘法来进行求解。
 
-![1661776447349](C:\Users\17799\AppData\Roaming\Typora\typora-user-images\1661776447349.png)
+![1661776447349](https://github.com/LinkWithMe/SNN-learnabc/blob/main/Work1/image/54)
 
 但是，在可能存在**误匹配**的情况下，更倾向于采用**随机采样一致性**来求。该算法适用于很多带误匹配的数据。
 
@@ -492,21 +492,21 @@ BRIEF是一种二进制描述，用汉明距离来进行度量。如BRIEF-128就
 
 而随机采样一致性：
 
-![1661777000760](C:\Users\17799\AppData\Roaming\Typora\typora-user-images\1661777000760.png)
+![1661777000760](https://github.com/LinkWithMe/SNN-learnabc/blob/main/Work1/image/55)
 
 算法的基本流程：
 
-![1661777219733](C:\Users\17799\AppData\Roaming\Typora\typora-user-images\1661777219733.png)
+![1661777219733](https://github.com/LinkWithMe/SNN-learnabc/blob/main/Work1/image/56)
 
-![1661777253231](C:\Users\17799\AppData\Roaming\Typora\typora-user-images\1661777253231.png)
+![1661777253231](https://github.com/LinkWithMe/SNN-learnabc/blob/main/Work1/image/57)
 
-![1661777278563](C:\Users\17799\AppData\Roaming\Typora\typora-user-images\1661777278563.png)
+![1661777278563](https://github.com/LinkWithMe/SNN-learnabc/blob/main/Work1/image/58)
 
-![1661777304277](C:\Users\17799\AppData\Roaming\Typora\typora-user-images\1661777304277.png)
+![1661777304277](https://github.com/LinkWithMe/SNN-learnabc/blob/main/Work1/image/59)
 
 整体的流程表述如下：
 
-![1661777374309](C:\Users\17799\AppData\Roaming\Typora\typora-user-images\1661777374309.png)
+![1661777374309](https://github.com/LinkWithMe/SNN-learnabc/blob/main/Work1/image/60)
 
 ##### 2.3.3 从E中分解R和t
 
