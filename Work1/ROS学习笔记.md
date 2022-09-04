@@ -18,7 +18,7 @@ sudo apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E31
 
 添加成功后的结果：
 
-![1660884436245](C:\Users\17799\AppData\Roaming\Typora\typora-user-images\1660884436245.png)
+![1660884436245](https://github.com/LinkWithMe/SNN-learnabc/blob/main/Work1/image2/1)
 
 ### 1.3 更新软件源
 
@@ -28,7 +28,7 @@ sudo apt update
 
 更新后的结果：
 
-![1660884501344](C:\Users\17799\AppData\Roaming\Typora\typora-user-images\1660884501344.png)
+![1660884501344](https://github.com/LinkWithMe/SNN-learnabc/blob/main/Work1/image2/2)
 
 ### 1.4 安装
 
@@ -38,7 +38,7 @@ sudo apt install ros-noetic-desktop-full
 
 安装完成后的结果：
 
-![1660887352351](C:\Users\17799\AppData\Roaming\Typora\typora-user-images\1660887352351.png)
+![1660887352351](https://github.com/LinkWithMe/SNN-learnabc/blob/main/Work1/image2/3)
 
 ## 2.配置与安装检查
 
@@ -52,7 +52,7 @@ sudo rosdep init
 
 出现错误：
 
-![1660893169752](C:\Users\17799\AppData\Roaming\Typora\typora-user-images\1660893169752.png)
+![1660893169752](https://github.com/LinkWithMe/SNN-learnabc/blob/main/Work1/image2/4)
 
 尝试命令：
 
@@ -62,7 +62,7 @@ sudo apt install python3-rosdep2
 
 安装成功后再次进行初始化，出现错误：
 
-![1660893249580](C:\Users\17799\AppData\Roaming\Typora\typora-user-images\1660893249580.png)
+![1660893249580](https://github.com/LinkWithMe/SNN-learnabc/blob/main/Work1/image2/5)
 
 输入命令：
 
@@ -72,7 +72,7 @@ echo "source /opt/ros/noetic/setup.bash" >> ~/.bashrc
 
 再次进行初始化，成功：
 
-![1660893352503](C:\Users\17799\AppData\Roaming\Typora\typora-user-images\1660893352503.png)
+![1660893352503](https://github.com/LinkWithMe/SNN-learnabc/blob/main/Work1/image2/6)
 
 ### 2.2 配置环境变量
 
@@ -92,7 +92,7 @@ sudo apt install python3-rosinstall python3-rosinstall-generator python3-wstool
 
 安装完成后结果：
 
-![1660893707637](C:\Users\17799\AppData\Roaming\Typora\typora-user-images\1660893707637.png)
+![1660893707637](https://github.com/LinkWithMe/SNN-learnabc/blob/main/Work1/image2/7)
 
 ### 2.4 验证ROS是否安装成功
 
@@ -104,7 +104,7 @@ roscore
 
 出现提示信息：
 
-![1660893784752](C:\Users\17799\AppData\Roaming\Typora\typora-user-images\1660893784752.png)
+![1660893784752](https://github.com/LinkWithMe/SNN-learnabc/blob/main/Work1/image2/8)
 
 执行以下命令：
 
@@ -114,7 +114,7 @@ sudo apt install python3-roslaunch
 
 再次运行，结果如下：
 
-![1660893910132](C:\Users\17799\AppData\Roaming\Typora\typora-user-images\1660893910132.png)
+![1660893910132](https://github.com/LinkWithMe/SNN-learnabc/blob/main/Work1/image2/9)
 
 错误原因可能是因为之前的安装没有安装全，执行：
 
@@ -124,7 +124,7 @@ sudo apt install ros-noetic-desktop-full
 
 再次执行roscore，结果如下：
 
-![1660894002308](C:\Users\17799\AppData\Roaming\Typora\typora-user-images\1660894002308.png)
+![1660894002308](https://github.com/LinkWithMe/SNN-learnabc/blob/main/Work1/image2/10)
 
 安装完毕
 
@@ -140,7 +140,7 @@ vim CMakeLists.txt
 
 修改部分：
 
-![1661963581772](C:\Users\17799\AppData\Roaming\Typora\typora-user-images\1661963581772.png)
+![1661963581772](https://github.com/LinkWithMe/SNN-learnabc/blob/main/Work1/image2/11)
 
 ①放开注释
 
@@ -148,11 +148,11 @@ vim CMakeLists.txt
 
 最终结果：
 
-![1661963795561](C:\Users\17799\AppData\Roaming\Typora\typora-user-images\1661963795561.png)
+![1661963795561](https://github.com/LinkWithMe/SNN-learnabc/blob/main/Work1/image2/12)
 
 ### 3.2 话题通信的关注点
 
-![1662087465165](C:\Users\17799\AppData\Roaming\Typora\typora-user-images\1662087465165.png)
+![1662087465165](https://github.com/LinkWithMe/SNN-learnabc/blob/main/Work1/image2/13)
 
 ## 4.遇到的错误以及解决
 
@@ -160,7 +160,7 @@ vim CMakeLists.txt
 
 运行后出现错误如下：
 
-![1661930285010](C:\Users\17799\AppData\Roaming\Typora\typora-user-images\1661930285010.png)
+![1661930285010](https://github.com/LinkWithMe/SNN-learnabc/blob/main/Work1/image2/14)
 
 将DISPLAY定位到自己电脑端口：
 
@@ -170,17 +170,17 @@ export DISPLAY=10.61.88.210:0.0
 
 再次运行之后，无报错，但是无窗口：
 
-![1661930927493](C:\Users\17799\AppData\Roaming\Typora\typora-user-images\1661930927493.png)
+![1661930927493](https://github.com/LinkWithMe/SNN-learnabc/blob/main/Work1/image2/15)
 
 尝试运行键盘操作界面：
 
-![1661930943103](C:\Users\17799\AppData\Roaming\Typora\typora-user-images\1661930943103.png)
+![1661930943103](https://github.com/LinkWithMe/SNN-learnabc/blob/main/Work1/image2/16)
 
 可以正常运行，但是就是没有窗口界面
 
 参考了以下文章：
 
-![1661932731252](C:\Users\17799\AppData\Roaming\Typora\typora-user-images\1661932731252.png)
+![1661932731252](https://github.com/LinkWithMe/SNN-learnabc/blob/main/Work1/image2/17)
 
 发现是因为自己没有**GUI**的问题，看到文章所写的提到，目前WSL2已经可以直接安装Linux的GUI，于是赶紧下载：
 
@@ -200,7 +200,7 @@ sudo apt install x11-apps -y
 
 再次运行：
 
-![1661932986012](C:\Users\17799\AppData\Roaming\Typora\typora-user-images\1661932986012.png)
+![1661932986012](https://github.com/LinkWithMe/SNN-learnabc/blob/main/Work1/image2/18)
 
 成功！
 
@@ -208,7 +208,7 @@ sudo apt install x11-apps -y
 
 报错：
 
-![1661938042949](C:\Users\17799\AppData\Roaming\Typora\typora-user-images\1661938042949.png)
+![1661938042949](https://github.com/LinkWithMe/SNN-learnabc/blob/main/Work1/image2/19)
 
 执行命令：
 
@@ -218,7 +218,7 @@ pip install empy
 
 报错为：
 
-![1661938343980](C:\Users\17799\AppData\Roaming\Typora\typora-user-images\1661938343980.png)
+![1661938343980](https://github.com/LinkWithMe/SNN-learnabc/blob/main/Work1/image2/20)
 
 执行命令：
 
@@ -230,13 +230,13 @@ conda install empy
 
 再次执行，成功：
 
-![1661962453259](C:\Users\17799\AppData\Roaming\Typora\typora-user-images\1661962453259.png)
+![1661962453259](https://github.com/LinkWithMe/SNN-learnabc/blob/main/Work1/image2/21)
 
 ### 4.3 Linux无法安装vs code安装包
 
 将安装包转移至linux中，执行安装出现如下错误：
 
-![1662007480163](C:\Users\17799\AppData\Roaming\Typora\typora-user-images\1662007480163.png)
+![1662007480163](https://github.com/LinkWithMe/SNN-learnabc/blob/main/Work1/image2/22)
 
 执行命令：
 
@@ -250,7 +250,7 @@ sudo dpkg -i code_1.70.2-1660629410_amd64.deb
 
 报错信息：
 
-![1662008372692](C:\Users\17799\AppData\Roaming\Typora\typora-user-images\1662008372692.png)
+![1662008372692](https://github.com/LinkWithMe/SNN-learnabc/blob/main/Work1/image2/23)
 
 输入了两条命令：
 
@@ -260,7 +260,7 @@ sudo code /directory-to-open --user-data-dir='.' --no-sandbox
 
 成功打开：
 
-![1662008877019](C:\Users\17799\AppData\Roaming\Typora\typora-user-images\1662008877019.png)
+![1662008877019](https://github.com/LinkWithMe/SNN-learnabc/blob/main/Work1/image2/24)
 
 ### 4.5 vscode中编译ros失败
 
@@ -289,7 +289,7 @@ sudo code /directory-to-open --user-data-dir='.' --no-sandbox
 
 修改完文件之后，再次编译报错：
 
-![1662010924084](C:\Users\17799\AppData\Roaming\Typora\typora-user-images\1662010924084.png)
+![1662010924084](https://github.com/LinkWithMe/SNN-learnabc/blob/main/Work1/image2/25)
 
 尝试过多种方法，但是没有找到解决之道，但是：
 
@@ -300,12 +300,12 @@ sudo code /directory-to-open --user-data-dir='.' --no-sandbox
 
 结果成功：
 
-![1662033696172](C:\Users\17799\AppData\Roaming\Typora\typora-user-images\1662033696172.png)
+![1662033696172](https://github.com/LinkWithMe/SNN-learnabc/blob/main/Work1/image2/26)
 
 - vs code中进行代码编写
 - vs code中不使用视频给的代码，默认配置代码，然后在vs code上运行：
 
-![1662033820382](C:\Users\17799\AppData\Roaming\Typora\typora-user-images\1662033820382.png)
+![1662033820382](https://github.com/LinkWithMe/SNN-learnabc/blob/main/Work1/image2/27)
 
 依旧成功
 
@@ -329,7 +329,7 @@ roslaunch helloworld_vs start_tu.launch
 
 报错信息：
 
-![1662048299829](C:\Users\17799\AppData\Roaming\Typora\typora-user-images\1662048299829.png)
+![1662048299829](https://github.com/LinkWithMe/SNN-learnabc/blob/main/Work1/image2/28)
 
 改正方法：
 
@@ -339,7 +339,7 @@ roslaunch helloworld_vs start_tu.launch
 
 在学习过程中，出现以下错误：
 
-![1662276733923](C:\Users\17799\AppData\Roaming\Typora\typora-user-images\1662276733923.png)
+![1662276733923](https://github.com/LinkWithMe/SNN-learnabc/blob/main/Work1/image2/p_1)
 
 显示：**服务器端可以启动，但是在响应请求时，会报错**
 
@@ -366,7 +366,7 @@ ROS_INFO("result:%d",sum);
 
 成功执行：
 
-![1662277100286](C:\Users\17799\AppData\Roaming\Typora\typora-user-images\1662277100286.png)
+![1662277100286](https://github.com/LinkWithMe/SNN-learnabc/blob/main/Work1/image2/p_2)
 
 ## 5.常用命令
 
@@ -379,7 +379,7 @@ mv /mnt/d/mydataset/code_1.70.2-1660629410_amd64.deb /root/download
 
 结果：
 
-![1662007035606](C:\Users\17799\AppData\Roaming\Typora\typora-user-images\1662007035606.png)
+![1662007035606](https://github.com/LinkWithMe/SNN-learnabc/blob/main/Work1/image2/29)
 
 ## 6.未解决的问题
 
@@ -412,7 +412,7 @@ sudo code /directory-to-open --user-data-dir='.' --no-sandbox
 
 且在开启后，打开具体的文件夹，会有很多很多文件，并不是像视频中那样只有几个文件：
 
-![1662047545568](C:\Users\17799\AppData\Roaming\Typora\typora-user-images\1662047545568.png)
+![1662047545568](https://github.com/LinkWithMe/SNN-learnabc/blob/main/Work1/image2/30)
 
 感觉这么多文件可能与执行的那一行指令有关，**但不知道这么多文件会对后续使用产生什么影响？**
 
@@ -420,11 +420,11 @@ sudo code /directory-to-open --user-data-dir='.' --no-sandbox
 
 在vscode中编译ros时，需要这一步：
 
-![1662034183198](C:\Users\17799\AppData\Roaming\Typora\typora-user-images\1662034183198.png)
+![1662034183198](https://github.com/LinkWithMe/SNN-learnabc/blob/main/Work1/image2/31)
 
 但是我执行之后，一直报错：
 
-![1662010924084](C:\Users\17799\AppData\Roaming\Typora\typora-user-images\1662010924084.png)
+![1662010924084](https://github.com/LinkWithMe/SNN-learnabc/blob/main/Work1/image2/32)
 
 改了好久没改好...
 
